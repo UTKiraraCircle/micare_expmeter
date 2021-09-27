@@ -1,3 +1,10 @@
+"""
+個人使用 引用を付しての参照・言及可
+For personal use, citation with reference approved.
+商業的な二次配布禁止
+Commercial secondary destribution prohibited.
+"""
+
 # 必要なライブラリをインポート
 import math, time, adafruit_tsl2591, terminalio, displayio
 from board import *
@@ -5,7 +12,7 @@ from busio import I2C, SPI
 from adafruit_displayio_sh1107 import SH1107
 from adafruit_display_text import label
 
-# 光センサ、ディスプレイを駆動するためのI2C、SPI通信を有効化
+# 光センサ、ディスプレイを駆動するためのI2C、SPI通信を有効化 GP~はマイコンのピン指定
 i2c = I2C(GP27,GP26)
 sensor = adafruit_tsl2591.TSL2591(i2c, address = 0x29)
 displayio.release_displays()
@@ -20,6 +27,7 @@ Tlist = ['1', '1/2', '1/4', '1/8', '1/15', '1/30', '1/60', '1/125', '1/250', '1/
 # 電源が入っている間は以下の処理を無限に繰り返す
 while True:
     # 最初は低感度に設定して強い光にも対応
+    #初手でセンサ感度が高いとエラー処理が面倒なので低感度に設定
     sensor.gain = adafruit_tsl2591.GAIN_LOW
     k = 0
     while k < 4: # 測光してすぐの値は荒ぶるので4回目の測光値を感度調整に使用
@@ -84,4 +92,4 @@ while True:
         text_area = label.Label(terminalio.FONT,text=Exp,color=0xFFFF00)
         text_group.append(text_area)
         splash.append(text_group)
-    display.show(splash) #JKすぷらっしゅ...
+    display.show(splash) #JKすぷらっしゅ
