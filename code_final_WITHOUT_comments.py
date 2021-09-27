@@ -36,16 +36,15 @@ while True:
         Ev = math.log(float(sensor.lux)/2.5,2)
         time.sleep(0.1)
         k += 1
-    Ev1 = Ev + 2 #+は実地試験の結果を鑑みて補正
+    Ev1 = Ev + 2
     splash = displayio.Group()
     text_group = displayio.Group(scale = 1, x = 1, y = 3)
     text = "GAIN:" + gain + " Ev:" + str(Ev1)
     text_area = label.Label(terminalio.FONT, text=text, color=0xFFFF00)
     text_group.append(text_area)
     splash.append(text_group)
-    for N in range(3): #ISO400までを表示して視認性向上を図る
+    for N in range(3):
         Ev2 = Ev1 + N
-        #FBをもとに露出計算部分を改修
         if Ev2 < 4:
             Av = 2
             Tv = Ev2 - 2
