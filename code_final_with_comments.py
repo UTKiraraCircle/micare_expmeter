@@ -3,6 +3,8 @@
 For personal use, citation with reference approved.
 商業的な二次配布禁止
 Commercial secondary destribution prohibited.
+実際にPicoに保存して動かす場合はファイル名を "code.py" とすること
+You must rename this file when you use this file as a driver of your Pico. 
 """
 
 # 必要なライブラリをインポート
@@ -75,9 +77,9 @@ while True:
         if Ev2 < 4:
             Av = 2
             Tv = Ev2 - 2
-            T = str(round(2**(-Tv),1))
+            T = str(round(2**(-Tv),1)) #長いシャッタ―は秒数を直接表示
         else:
-            # 明るい場合にシャッタースピードが小さく出るよう、Tvを切り上げに修正
+            # 明るい場合にシャッタースピードが小さく出るよう、Tvを切り上げ
             Tv = math.ceil(Ev2/2)
             T = Tlist[Tv]
             Av = Ev2 - Tv
