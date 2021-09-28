@@ -4,7 +4,7 @@ For personal use, citation with reference approved.
 商業的な二次配布禁止
 Commercial secondary destribution prohibited.
 実際にPicoに保存して動かす場合はファイル名を "code.py" とすること
-You must rename this file when you use this file as a driver of your Pico. 
+You must rename this file as "code.py" when you use this file as a driver of your Pico. 
 """
 
 # 必要なライブラリをインポート
