@@ -32,4 +32,8 @@ micare vol.1 に寄稿した記事「もゆもゆに露出計を捧ぐ」で製�
 * Thonny ver 1.1.16, 1.1.17
 
 ## 掲載ソースコードの注釈
-coming soon!
+* README.md このファイル
+* blink_LED.py オンボードLEDを用いたLチカ マイコンの動作確認用
+* ExpMeter_Sensor.py 感度の自動設定のためのコード 試作段階で生えたもの
+* **code_final_with_comments.py 2021 9/27 時点で最新のコード コメントつき**
+* **code_final_WITHOUT_comments.py 2021 9/27 時点で最新のコード コメントなし**
